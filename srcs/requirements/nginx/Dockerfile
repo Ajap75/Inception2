@@ -14,6 +14,7 @@ RUN mkdir -p /run/nginx /etc/nginx/ssl /var/www/wordpress
 # Copier la configuration Nginx dans le conteneur
 COPY conf/nginx.conf /etc/nginx/conf.d/default.conf
 
+ARG DOMAIN_NAME
 
 # Générer un certificat auto-signé pour le domaine
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
